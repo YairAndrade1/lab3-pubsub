@@ -71,5 +71,28 @@ pkill -f broker_tcp
 pkill -f publisher_tcp
 pkill -f subscriber_tcp
 ```
+## Pruebas con Wireshark
+1. Instalación de WSL en PowerShell
+```
+wsl --install
+```
+2. Entrar a WSL y ejecutar comandos para instalar gcc
+```
+wsl
+sudo apt update
+sudo apt install build-essential
+gcc --version
+```
+3. Clonar repositorio
+4. Instalar librería para capturar desde WSL
+```
+sudo apt update
+sudo apt install tcpdump -y
+```
+5. Correr el comando para captura de la información y guardar la información
+```
+sudo tcpdump -i any port 8080 -w tcp_pubsub.pcap
+cp tcp_pubsub.pcap /mnt/c/Users/<USUARIO>/Desktop/
+```
 
 END.
