@@ -25,6 +25,7 @@ gcc -o broker_tcp broker_tcp.c && gcc -o publisher_tcp publisher_tcp.c && gcc -o
 
 Para ejecutarlo es necesario tener una terminal por instancia (Pub,Sub,Broker)
 Supongamos que queremos 1 broker, 1 subscriber y 1 publisher. Es importante ejecutar en el siguiente orden, de lo contrario tendremos errores.
+
 Terminal 1 (Broker):
 ```bash
 ./broker_tcp
