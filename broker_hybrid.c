@@ -73,7 +73,7 @@ void forward_message(int sockfd, const char *topic, const char *message) {
             if (sent < 0)
                 perror("Error enviando mensaje a subscriber");
             else
-                printf("📤 Enviado a %s:%d -> '%s'\n",
+                printf("Enviado a %s:%d -> '%s'\n",
                        inet_ntoa(subscribers[i].addr.sin_addr),
                        ntohs(subscribers[i].addr.sin_port), msg_with_id);
         }
@@ -83,7 +83,7 @@ void forward_message(int sockfd, const char *topic, const char *message) {
 void process_ack(const char *buffer, struct sockaddr_in client) {
     int msg_id;
     if (sscanf(buffer, "ACK:MSGID:%d", &msg_id) == 1) {
-        printf("✅ ACK recibido de %s:%d por mensaje %d\n",
+        printf("ACK recibido de %s:%d por mensaje %d\n",
                inet_ntoa(client.sin_addr), ntohs(client.sin_port), msg_id);
     }
 }
@@ -120,7 +120,7 @@ int main() {
             continue;
 
         buffer[bytes] = '\0';
-        printf("📥 Recibido de %s:%d: %s\n",
+        printf("Recibido de %s:%d: %s\n",
                inet_ntoa(client_addr.sin_addr), ntohs(client_addr.sin_port), buffer);
 
         sendto(sockfd, "ACK:RECEIVED", strlen("ACK:RECEIVED"), 0,
