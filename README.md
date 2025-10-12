@@ -95,5 +95,6 @@ sudo apt install tcpdump -y
 sudo tcpdump -i any port 8080 -w tcp_pubsub.pcap
 cp tcp_pubsub.pcap /mnt/c/Users/<USUARIO>/Desktop/
 ```
+Se incluyen los archivos de pruebas obtenidos para la prueba de TCP y UDP en el repositorio.
 
 END.
